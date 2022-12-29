@@ -14,6 +14,7 @@ function tick() {
     <div className='App-header'>
       <h1>Hello, world!</h1>
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
+      <App />
     </div>
   );
   root.render(element);}
