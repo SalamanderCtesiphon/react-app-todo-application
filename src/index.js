@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import MyComponent from './MyComponent';
 
 
 
@@ -15,6 +16,7 @@ function tick() {
       <h1>Hello, world!</h1>
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
       <App />
+      <MyComponent />
     </div>
   );
   root.render(element);}
