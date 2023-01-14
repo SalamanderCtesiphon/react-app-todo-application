@@ -1,15 +1,25 @@
-import React from "react";
+import React, { Component }from "react";
+import "../styles/OverviewStyles.css"
 
-const Overview = (props) => {
-  const { tasks } = props;
+export class Overview extends Component {
+    render() {
+        const { tasks, id } = this.props;
 
-  return (
-    <ul>
-      {tasks.map((task) => {
-        return <li key={task.id}>{task.text}</li>;
-      })}
-    </ul>
-  );
+        return (
+            <ul>
+            {tasks.map((task) => {
+                return (
+                <div>
+                    <li key={task.id}>
+                        {task.number}. {task.text}
+                        <button onClick={this.props.delTask.bind(this, id)}>x</button>
+                    </li>
+                </div>
+                )
+            })}
+            </ul>
+        )
+    }
 };
 
 export default Overview;

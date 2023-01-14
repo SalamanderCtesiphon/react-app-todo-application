@@ -9,16 +9,28 @@ class App extends Component {
 
     this.state = {
       task: {
+        number: 0,
         text: '',
         id: uniqid()
       },
       tasks: [],
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.onSubmitTask = this.onSubmitTask.bind(this);
+    this.delTask = this.delTask.bind(this);
   }
+
+  delTask = (id) => {
+    this.setState({ tasks: [...this.state.tasks.filter(task => task.id !==id)]})
+  }
+  
+
 
   handleChange = (e) => {
     this.setState({
       task : {
+        number: this.state.task.number + 1,
         text: e.target.value,
         id: this.state.task.id,
       }
@@ -30,6 +42,7 @@ class App extends Component {
     this.setState({
       tasks: this.state.tasks.concat(this.state.task),
       task: { 
+        number: this.state.task.number,
         text: '',
         id: uniqid()
       },
@@ -38,7 +51,7 @@ class App extends Component {
   
 
   render() {
-    const { task, tasks } = this.state;
+    const { task, tasks, id } = this.state;
 
     return (
       <div>
@@ -55,7 +68,7 @@ class App extends Component {
             Add Task
           </button>
         </form>
-        <Overview tasks={tasks} />
+        <Overview tasks={tasks} delTask={this.delTask} />
       </div>
     );
   }
