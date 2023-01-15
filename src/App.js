@@ -10,8 +10,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      tasks: []
+      tasks: [
+        {
+          number: 1,
+          id: uniqid(),
+          title: 'Get Organized'
+        }
+      ]
     }
+    this.delTask = this.delTask.bind(this);
+    this.addTask = this.addTask.bind(this);
   }
   
 

@@ -8,6 +8,9 @@ export class AddTask extends Component {
       title: '',
       task: ''
     }
+  
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
 
   }
    
@@ -23,7 +26,7 @@ export class AddTask extends Component {
     this.setState({ 
         number: this.state.task.number + 1, 
         title: e.target.value,
-        id: this.state.task.id,
+        id: this.state.task.id
     })
   }
 
@@ -42,7 +45,7 @@ export class AddTask extends Component {
           /> {''}
           <input
             type="submit"
-            value="Sumit"
+            value="Submit"
             className='btn'
             style={{flex: '1'}}
           />

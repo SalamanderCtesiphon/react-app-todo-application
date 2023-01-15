@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 export class TaskItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { id, title, number } = this.props.task;
     return (
