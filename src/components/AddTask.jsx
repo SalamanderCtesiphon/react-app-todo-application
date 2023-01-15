@@ -5,8 +5,10 @@ export class AddTask extends Component {
     super(props);
 
     this.state = {
+      number: '',
       title: '',
-      task: ''
+      task: '',
+      id: ''
     }
   
     this.onSubmit = this.onSubmit.bind(this);
@@ -22,13 +24,7 @@ export class AddTask extends Component {
     })
   }
 
-  onChange = (e) => {
-    this.setState({ 
-        number: this.state.task.number + 1, 
-        title: e.target.value,
-        id: this.state.task.id
-    })
-  }
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });  
 
   render() {
     return (

@@ -13,8 +13,8 @@ class App extends Component {
       tasks: [
         {
           number: 1,
-          id: uniqid(),
-          title: 'Get Organized'
+          title: 'Get Organized',
+          id: uniqid()
         }
       ]
     }
@@ -42,7 +42,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Header />
-          <AddTask addTask={this.addTask}/>
+          <AddTask addTask={this.addTask} />
           <Tasks tasks={this.state.tasks} 
           delTask={this.delTask} />
         </div>
