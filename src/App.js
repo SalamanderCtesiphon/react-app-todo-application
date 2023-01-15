@@ -6,26 +6,31 @@ import uniqid from "uniqid";
 import './App.css';
 
 class App extends Component {
-  state = {
-    tasks: [
-      {
-        number: 1,
-        id: uniqid(),
-        title: 'Get Organized'
-      }
-    ]
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      tasks: [
+        {
+          number: 1,
+          id: uniqid(),
+          title: 'Get Organized'
+        }
+      ]
+    }
   }
+  
 
   delTask = (id) => {
     this.setState({ 
       tasks: [...this.state.tasks.filter(task => task.id !==id)]})
   }
   
-  addTask = (title, number) => {
+  addTask = (number, id, title) => {
     const newTask = {
       number,
-      id: uniqid(),
-      title
+      title,
+      id: uniqid()
     }
     this.setState({ tasks: [...this.state.tasks, newTask]})
   }

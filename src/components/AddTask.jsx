@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 
 export class AddTask extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       title: '',
-      task: '',
-      number: ''
+      task: ''
     }
-  
-  
+
+  }
+   
   onSubmit = (e) => {
     e.preventDefault();
     this.props.addTask(this.state.title);
@@ -18,11 +21,12 @@ export class AddTask extends Component {
 
   onChange = (e) => {
     this.setState({ 
+        number: this.state.task.number + 1, 
         title: e.target.value,
         id: this.state.task.id,
-        number: this.state.task.number + 1 
     })
   }
+
   render() {
     return (
       <div>

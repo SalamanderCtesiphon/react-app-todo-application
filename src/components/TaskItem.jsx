@@ -5,10 +5,8 @@ export class TaskItem extends Component {
     const { id, title, number } = this.props.task;
     return (
       <div>
-        <p>
-            { number }. { title } {''}
-            <button onClick={this.props.delTask.bind(this, id)} style={btnStyle}>X</button>
-        </p>
+        { number }. { title } {''}
+        <button onClick={this.props.delTask.bind(this, id)} style={btnStyle}>X</button>
       </div>
     )
   }
