@@ -6,7 +6,7 @@ export class AddTask extends Component {
 
     this.state = {
       title: '',
-      task: ''
+      task: {}
     }
 
   }

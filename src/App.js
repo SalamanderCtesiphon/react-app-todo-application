@@ -10,13 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      tasks: [
-        {
-          number: 1,
-          id: uniqid(),
-          title: 'Get Organized'
-        }
-      ]
+      tasks: []
     }
   }
   
