@@ -23,9 +23,9 @@ class App extends Component {
   
   addTask = (title, number) => {
     const newTask = {
+      number,
       id: uniqid(),
-      title,
-      number
+      title
     }
     this.setState({ tasks: [...this.state.tasks, newTask]})
   }
@@ -36,7 +36,7 @@ class App extends Component {
         <div className="container">
           <Header />
           <AddTask addTask={this.addTask}/>
-          <Tasks number={this.state.number} tasks={this.state.tasks} 
+          <Tasks tasks={this.state.tasks} 
           delTask={this.delTask} />
         </div>
       </div>

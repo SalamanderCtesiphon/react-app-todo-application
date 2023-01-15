@@ -12,15 +12,15 @@ export class AddTask extends Component {
     e.preventDefault();
     this.props.addTask(this.state.title);
     this.setState({ 
-        title: '',
-        number: this.state.task.number 
+        title: ''
     })
   }
 
   onChange = (e) => {
     this.setState({ 
-        [e.target.name]: e.target.value,
-        number: this.state.task.number +1 
+        title: e.target.value,
+        id: this.state.task.id,
+        number: this.state.task.number + 1 
     })
   }
   render() {
