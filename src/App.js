@@ -10,13 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      tasks: [
-        {
-          number: 1,
-          title: 'Get Organized',
-          id: uniqid()
-        }
-      ]
+      tasks: [ ]
     }
     this.delTask = this.delTask.bind(this);
     this.addTask = this.addTask.bind(this);
@@ -28,11 +22,10 @@ class App extends Component {
       tasks: [...this.state.tasks.filter(task => task.id !==id)]})
   }
   
-  addTask = (number, id, title) => {
+  addTask = ( id, title) => {
     const newTask = {
-      number,
       title,
-      id: uniqid()
+      id: uniqid(),
     }
     this.setState({ tasks: [...this.state.tasks, newTask]})
   }

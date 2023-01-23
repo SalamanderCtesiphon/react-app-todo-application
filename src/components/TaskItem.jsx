@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 
 export class TaskItem extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
-    const { id, title, number } = this.props.task;
+    const { id, title } = this.props.task;
     return (
       <div>
-        { number }. { title } {''}
+        { title } {''}
         <button onClick={this.props.delTask.bind(this, id)} style={btnStyle}>X</button>
       </div>
     )

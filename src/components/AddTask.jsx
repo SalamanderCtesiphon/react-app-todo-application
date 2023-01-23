@@ -5,7 +5,6 @@ export class AddTask extends Component {
     super(props);
 
     this.state = {
-      number: '',
       title: '',
       task: '',
       id: ''
@@ -18,7 +17,7 @@ export class AddTask extends Component {
    
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.addTask(this.state.title);
+    this.props.addTask(this.state.task.title);
     this.setState({ 
         title: ''
     })
